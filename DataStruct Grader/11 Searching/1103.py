@@ -52,11 +52,18 @@ class Hash:
         out += '---------------------------'
         return out
 
-print(" ***** Fun with hashing *****")
-control, lst = input("Enter Input : ").split('/')
-table_size, max_collision = list(map(int, control.split()))
-lst = lst.split(',')
-data_lst = []
-for item in lst:
-    key, value = item.split()
-    data_lst.append(Data(key, value))
+
+if __name__ == '__main__':
+    print(" ***** Fun with hashing *****")
+    control, lst = input("Enter Input : ").split('/')
+    table_size, max_collision = list(map(int, control.split()))
+    lst = lst.split(',')
+    data_lst = []
+    for item in lst:
+        key, value = item.split()
+        data_lst.append(Data(key, value))
+
+    hash = Hash(table_size, max_collision)
+    for data in data_lst:
+        hash.insert(data)
+        print(hash)

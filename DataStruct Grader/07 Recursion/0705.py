@@ -1,19 +1,21 @@
-def eachLines(m ,n) :
-    if m == n :
-        #print("m =",m,'n =',n)
-        print('#',end='')
-        eachLines(m,n)
-    else :
-        #print("m =",m,'n =',n)
-        print('_',end='')
-        eachLines(m-1,n)
+def rec_row(number, sharps):
+    print('_'*(number-sharps), end="")
+    print('#'*sharps, end="")
+    print()
 
-def staircase(i, j) :
-    if i == 0 :
-        pass
-    else :
-        staircase(i-1 ,j)
-        print("i =",i,'j =',j)
-        eachLines(j, i)
-    
-staircase(3, 3)
+def rec_pattern(number, row=0):
+    if number > 0:
+        if row < number:
+            row += 1
+            rec_row(number, row)
+            rec_pattern(number, row)
+    elif number == 0:
+        print('Not Draw!')
+    else:
+        if row < abs(number):
+            rec_row(abs(number), abs(number)-row)
+            row += 1
+            rec_pattern(number, row)
+
+number = int(input("Enter Input : "))
+rec_pattern(number)

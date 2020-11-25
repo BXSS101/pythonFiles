@@ -16,11 +16,17 @@ def get_median(sorted_list):
     else:
         return sorted_list[length // 2]
 
-lst = list(map(int, input("Enter Input : ").split()))
-sorting = []
-temp = []
-for item in lst:
-    sorting.append(item)
-    temp.append(item)
-    insertion_sort(sorting)
-    print(f"list = {temp} : median = {get_median(sorting):.1f}")
+lst = [e for e in input("Enter Input : ").split()]
+if lst[0] == 'EX':
+    Ans = "minHeap and maxHeap"
+    print("Extra Question : What is a suitable sort algorithm?")
+    print("   Your Answer : "+Ans)
+else:
+    lst=list(map(int, lst))
+    sorting = []
+    temp = []
+    for item in lst:
+        sorting.append(item)
+        temp.append(item)
+        insertion_sort(sorting)
+        print(f"list = {temp} : median = {get_median(sorting):.1f}")
