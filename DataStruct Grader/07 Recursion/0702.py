@@ -1,3 +1,7 @@
+'''
+****** ห้ามใช้ For , While  ( ให้ฝึกเอาไว้ เนื่องจากถ้าเจอตอนสอบจะได้ 0 )
+เขียน Recursive เพื่อหาว่า String ที่รับเข้ามาเป็น Palindrome หรือไม่
+'''
 text = input("Enter Input : ")
 def isPaliRec(str,i,j) :
     if i == j :

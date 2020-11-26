@@ -1,3 +1,6 @@
+'''
+รับ input เป็น list คู่อันดับ(เช่น A B,B C = A ไปหา B ได้ และ B ไปหา C ได้) ให้สร้าง Directed Graph จากนั้นให้แสดงผล adjacency metrix ของ graph
+'''
 class Graph:
     def __init__(self, vertices_lst):
         self.weight = dict()
@@ -43,7 +46,7 @@ if __name__ == '__main__':
         if dest not in vertex_lst:
             vertex_lst.append(dest)
     vertex_lst = sorted(vertex_lst)
-##
+
     g = Graph(vertex_lst)
     for item in lst:
         src, dest = item.split()

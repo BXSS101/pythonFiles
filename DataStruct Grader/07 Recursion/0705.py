@@ -1,3 +1,16 @@
+'''
+เขียนโปรแกรมที่แสดงผลดังตัวอย่าง
+****ห้ามใช้คำสั่ง for, while, do while*****
+หมายเหตุ ฟังก์ชันมี parameter ได้ไม่เกิน 2 ตัว
+Enter Input : 7
+______#
+_____##
+____###
+___####
+__#####
+_######
+#######
+'''
 def rec_row(number, sharps):
     print('_'*(number-sharps), end="")
     print('#'*sharps, end="")

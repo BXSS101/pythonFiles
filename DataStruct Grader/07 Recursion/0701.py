@@ -1,3 +1,7 @@
+'''
+****** ห้ามใช้ For , While  ( ให้ฝึกเอาไว้ เนื่องจากถ้าเจอตอนสอบจะได้ 0 )
+ให้เขียน Recursive หาค่า Min ของ Input
+'''
 minimum = 65000
 def min(ls) :
     global minimum
