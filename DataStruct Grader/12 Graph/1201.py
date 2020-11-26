@@ -43,7 +43,7 @@ if __name__ == '__main__':
         if dest not in vertex_lst:
             vertex_lst.append(dest)
     vertex_lst = sorted(vertex_lst)
-
+##
     g = Graph(vertex_lst)
     for item in lst:
         src, dest = item.split()
