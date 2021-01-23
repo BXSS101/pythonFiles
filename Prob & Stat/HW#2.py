@@ -429,7 +429,7 @@ if mode in ('A', 'a') :
     print("\tMonth 12 : " + "{:.2f}".format(round(findSD(lst1216), 2)))
 
 #Graph Plot !!!!!WAITING TO ADD REAL DATA
-print("\n. . . Plotting Graph . . .")
+print("\n. . . Plotting Line Graph . . .")
 x, y = [1, 2, 3], [1, 2, 3]
 plt.plot(x, y)
 #naming
