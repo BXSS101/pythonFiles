@@ -1,18 +1,48 @@
+###################
+# Disclaimer part #
+###################
+'''
+HomeWork#2 | Plot & Basic Statistic
+Course : Probability & Statistic
+Instructor : Asst.prof. Surin Kittitornkun, Ph.D.
+Semester / Academic Year : 2 / 2020
+Institute : KMITL, Bangkok, Thailand
+Developed By :  BXSS101 (Ackrawin B.)
+Github URL : https://github.com/BXSS101
+'''
+
+#################
+# Notes & To Do #
+#################
 """
 :: To Do ::
-Add condition for unessential list
- for example : lst0114, lst0315, lst0916 
+√Add feature choose display month or not
+√Add delay for easier reading
+√Add list to check each month
+ Add dictionary for region
+√Add interface
+ Add more fancy interface
+ Add Graph : Histogram, Box plot, Stem, Leaf
+√Add File path selecting Function
+ Add Comment to Expalin code
 """
-from statistics import mean
-import csv
-import time
-import math
 
+################
+# Program part #
+################
+import matplotlib.pyplot as plt     #For Graph plotting
+from statistics import mean         #For find mean from int list
+import csv                          #For Reading CSV Files
+import time                         #For Delay setting
+import math                         #For math calculation : sqrt
+
+#Function to find Average/Mean from 'string' list
 def findAvg(inLst) :
     sumOfLst = 0
     for i in inLst : sumOfLst = sumOfLst + int(i)
     return sumOfLst/len(inLst)
 
+#Function fo find Standard Deviation (S.D.) from 'string' list
 def findSD(inLst) :
     tempPowSum = 0
     tempSumPow = 0
@@ -21,8 +51,9 @@ def findSD(inLst) :
         tempSumPow = tempSumPow + int(i)
     return math.sqrt(((len(inLst) * tempPowSum) - pow(tempSumPow, 2)) / (len(inLst) * (len(inLst) - 1)))
 
-
+#variable for count rows & sum of each year
 count, sum14, sum15, sum16 = 0, 0, 0, 0
+#list for store value each year/month
 lst14, lst0114, lst0214, lst0314, lst0414, lst0514, lst0614, lst0714, lst0814, lst0914, lst1014, lst1114, lst1214 = [], [], [], [], [], [], [], [], [], [], [], [], []
 lst15, lst0115, lst0215, lst0315, lst0415, lst0515, lst0615, lst0715, lst0815, lst0915, lst1015, lst1115, lst1215 = [], [], [], [], [], [], [], [], [], [], [], [], []
 lst16, lst0116, lst0216, lst0316, lst0416, lst0516, lst0616, lst0716, lst0816, lst0916, lst1016, lst1116, lst1216 = [], [], [], [], [], [], [], [], [], [], [], [], []
@@ -30,12 +61,18 @@ lst16, lst0116, lst0216, lst0316, lst0416, lst0516, lst0616, lst0716, lst0816, l
 #Start Program
 print("============================================================")
 print("============================================================")
-print("============================================================")
 print("    Welcome to thaitourism2.csv data processing program.")
 print("============================================================")
+#File Selecting
+print("    Please Choose a File to Proceed . . . ")
+print("        *leave it blank to use default file path")
+print("Enter File Path : ", end='')
+inPath = input()
+#select to display only year or year with months
 print("        ↓↓↓ Select display mode to dispaly data ↓↓↓")
-print("          \'A\' : Dispaly only Year")
-print("          \'B\' : Dispaly Month and Year")
+print("          \'A\' : Dispaly Month & Year")
+print("          \'B\' : Dispaly only Year")
+#check if input are in correct format
 while True :
     mode = input("          SELECT MODE → ")
     if mode not in ('A', 'a', 'B', 'b') :
@@ -45,10 +82,13 @@ while True :
         break
 print("============================================================")
 print("============================================================")
-print("============================================================")
 
 #Open File and add Value to List
-with open('C:/Users/akara/Documents/GitHub/pythonFiles/Prob & Stat/thaitourism2.csv', 'r') as file:
+if inPath == '' :
+    path = 'C:/Users/akara/Documents/GitHub/pythonFiles/Prob & Stat/thaitourism2.csv'
+else :
+    path = inPath
+with open(path, 'r') as file:
     reader = csv.reader(file)
     #process for all year
     for row in reader:
@@ -111,18 +151,19 @@ with open('C:/Users/akara/Documents/GitHub/pythonFiles/Prob & Stat/thaitourism2.
                 lst1214.append(int(row[2]))
                 lst1215.append(int(row[3]))
                 lst1216.append(int(row[4]))
-    
-#print("Row count = " + str(count), end='\n\n')
-time.sleep(0.5)
-print(":::::")
-time.sleep(0.4)
-print("::::")
-time.sleep(0.3)
-print(":::")
-time.sleep(0.2)
-print("::")
-time.sleep(0.1)
-print(":")
+
+if True :  
+    #print("Row count = " + str(count), end='\n\n')
+    time.sleep(0.5)
+    print(":::::")
+    time.sleep(0.4)
+    print("::::")
+    time.sleep(0.3)
+    print(":::")
+    time.sleep(0.2)
+    print("::")
+    time.sleep(0.1)
+    print(":")
 
 #Dispaly Mean Section
 print(" ///// MEAN FROM ALL REGION EACH MONTH FROM 2014 - 2016 /////")
@@ -387,4 +428,13 @@ if mode in ('A', 'a') :
     time.sleep(0.2)
     print("\tMonth 12 : " + "{:.2f}".format(round(findSD(lst1216), 2)))
 
-#Graph Plot
+#Graph Plot !!!!!WAITING TO ADD REAL DATA
+print("\n. . . Plotting Graph . . .")
+x, y = [1, 2, 3], [1, 2, 3]
+plt.plot(x, y)
+#naming
+plt.xlabel('x - axis')
+plt.ylabel('y - axis')
+plt.title('Tourism in Thailand 2014 - 2016')
+#show the plot
+plt.show()
