@@ -1,3 +1,18 @@
+###################
+# Disclaimer part #
+###################
+'''
+Lab#9 | Tree 2
+Course : Data Structure & Algorithm
+Instructor : Kiatnarong Tongprasert, Kanut Tangtisanon
+Semester / Academic Year : 1 / 2020
+Institute : KMITL, Bangkok, Thailand
+Developed By :  BXSS101 (Ackrawin B.)
+Github URL : https://github.com/BXSS101
+'''
+################
+# Problem part #
+################
 '''
 จงเขียนฟังก์ชั่นสำหรับการ insert แบบ Binary Search Tree (BST) โดยที่ input ตัวแรกจะเป็น root เสมอและจงเขียนฟังก์ชั่นสำหรับการหาค่าที่ใกล้เคียง input ที่รับเข้ามาที่สุดที่อยู่ใน BST ที่ทำการ insert ครบแล้ว
 รูปแบบการรับ input จะแบ่งโดย '/'

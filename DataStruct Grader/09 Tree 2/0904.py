@@ -1,3 +1,18 @@
+###################
+# Disclaimer part #
+###################
+'''
+Lab#9 | Tree 2
+Course : Data Structure & Algorithm
+Instructor : Kiatnarong Tongprasert, Kanut Tangtisanon
+Semester / Academic Year : 1 / 2020
+Institute : KMITL, Bangkok, Thailand
+Developed By :  BXSS101 (Ackrawin B.)
+Github URL : https://github.com/BXSS101
+'''
+################
+# Problem part #
+################
 '''
 ean รักษาการผู้บัญชาการของกองอัศวิน Favonius แห่ง Mondstadt ต้องการทราบถึงขุมพลังของอัศวินในแต่ละกลุ่มภายในเมือง Mondstadt แห่งนี้จึงจะทดสอบความแข็งแกร่งของขุมกำลังที่มี โดยจะทำการจัดวางกำลังอัศวินภายในเมือง Mondstadt ดังตัวอย่างต่อไปนี้
                 พลัง    :   5  4  4  3  2  2  2

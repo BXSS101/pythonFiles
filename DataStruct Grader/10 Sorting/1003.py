@@ -1,3 +1,18 @@
+###################
+# Disclaimer part #
+###################
+'''
+Lab#10 | Sorting
+Course : Data Structure & Algorithm
+Instructor : Kiatnarong Tongprasert, Kanut Tangtisanon
+Semester / Academic Year : 1 / 2020
+Institute : KMITL, Bangkok, Thailand
+Developed By :  BXSS101 (Ackrawin B.)
+Github URL : https://github.com/BXSS101
+'''
+################
+# Problem part #
+################
 '''
 รับจำนวนเต็มมา 1 จำนวนแล้วให้แสดงผลดังนี้
 - หาก input ที่รับมานั้นมีการเรียงลำดับจากน้อยไปมาก และไม่มีตัวซ้ำเลยให้แสดงผลว่า "Metadrome"

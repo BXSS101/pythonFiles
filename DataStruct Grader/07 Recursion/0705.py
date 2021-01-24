@@ -1,3 +1,18 @@
+###################
+# Disclaimer part #
+###################
+'''
+Lab#7 | Recursion
+Course : Data Structure & Algorithm
+Instructor : Kiatnarong Tongprasert, Kanut Tangtisanon
+Semester / Academic Year : 1 / 2020
+Institute : KMITL, Bangkok, Thailand
+Developed By :  BXSS101 (Ackrawin B.)
+Github URL : https://github.com/BXSS101
+'''
+################
+# Problem part #
+################
 '''
 เขียนโปรแกรมที่แสดงผลดังตัวอย่าง
 ****ห้ามใช้คำสั่ง for, while, do while*****

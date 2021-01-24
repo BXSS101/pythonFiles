@@ -1,3 +1,18 @@
+###################
+# Disclaimer part #
+###################
+'''
+Lab#11 | Searching
+Course : Data Structure & Algorithm
+Instructor : Kiatnarong Tongprasert, Kanut Tangtisanon
+Semester / Academic Year : 1 / 2020
+Institute : KMITL, Bangkok, Thailand
+Developed By :  BXSS101 (Ackrawin B.)
+Github URL : https://github.com/BXSS101
+'''
+################
+# Problem part #
+################
 '''
 ให้น้องเขียนโปรแกรมหาค่าที่น้อยที่สุดที่มากกว่าค่าที่ต้องการจะหา ถ้าหากไม่มีให้แสดงว่า No First Greater Value โดยตัวเลขของทั้ง 2 list รับประกันว่าไม่เกิน 1000000
 ***** อธิบาย Test Case 2:

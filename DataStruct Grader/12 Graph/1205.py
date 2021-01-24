@@ -1,3 +1,18 @@
+###################
+# Disclaimer part #
+###################
+'''
+Lab#12 | Graph
+Course : Data Structure & Algorithm
+Instructor : Kiatnarong Tongprasert, Kanut Tangtisanon
+Semester / Academic Year : 1 / 2020
+Institute : KMITL, Bangkok, Thailand
+Developed By :  BXSS101 (Ackrawin B.)
+Github URL : https://github.com/BXSS101
+'''
+################
+# Problem part #
+################
 '''
 ให้น้องสร้างกราฟจาก input ที่รับเข้าไป  จากนั้นให้ทำการหาเส้นทางที่เป็นไปได้ทั้งหมดที่สามารถไปยังโหนดปลายทางได้ ถ้าหาก node ไหนเคยผ่านแล้วจะไม่สามารถผ่านได้อีก  โดยการแสดงผลลัพธ์ให้เรียงลำดับจากน้อยไปมาก ถ้าหากไม่สามารถไปยังปลายทางได้ให้แสดงว่า (source)  can't go to (destination)
 อธิบาย Input
