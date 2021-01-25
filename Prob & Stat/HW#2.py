@@ -30,7 +30,7 @@ Github URL : https://github.com/BXSS101
 ################
 # Program part #
 ################
-import matplotlib.pyplot as plt     #For Graph plotting
+import matplotlib.pyplot as pltA     #For Graph plotting
 from statistics import mean         #For find mean from int list
 import csv                          #For Reading CSV Files
 import time                         #For Delay setting
@@ -57,6 +57,10 @@ count, sum14, sum15, sum16 = 0, 0, 0, 0
 lst14, lst0114, lst0214, lst0314, lst0414, lst0514, lst0614, lst0714, lst0814, lst0914, lst1014, lst1114, lst1214 = [], [], [], [], [], [], [], [], [], [], [], [], []
 lst15, lst0115, lst0215, lst0315, lst0415, lst0515, lst0615, lst0715, lst0815, lst0915, lst1015, lst1115, lst1215 = [], [], [], [], [], [], [], [], [], [], [], [], []
 lst16, lst0116, lst0216, lst0316, lst0416, lst0516, lst0616, lst0716, lst0816, lst0916, lst1016, lst1116, lst1216 = [], [], [], [], [], [], [], [], [], [], [], [], []
+#dict for store region
+regDict14 = {'Africa' : [], 'Americas' : [], 'ASEAN' : [], 'EstAsia' : [], 'Europe' : [], 'MidEast' : [], 'Oceania' : [], 'SoAsia' : []}
+regDict15 = {'Africa' : [], 'Americas' : [], 'ASEAN' : [], 'EstAsia' : [], 'Europe' : [], 'MidEast' : [], 'Oceania' : [], 'SoAsia' : []}
+regDict16 = {'Africa' : [], 'Americas' : [], 'ASEAN' : [], 'EstAsia' : [], 'Europe' : [], 'MidEast' : [], 'Oceania' : [], 'SoAsia' : []}
 
 #Start Program
 print("============================================================")
@@ -75,7 +79,7 @@ print("          \'B\' : Dispaly only Year")
 #check if input are in correct format
 while True :
     mode = input("          SELECT MODE → ")
-    if mode not in ('A', 'a', 'B', 'b') :
+    if mode not in ('A', 'a', 'B', 'b', '') :
         print(" !!!!!!!! PLEASE TYPE ONLY A or B !!!!!!!!")
         print(" !!!!!!!!       INPUT AGAIN       !!!!!!!!")
     else :
@@ -92,10 +96,8 @@ with open(path, 'r') as file:
     reader = csv.reader(file)
     #process for all year
     for row in reader:
-        #counter
-        count = count + 1
         #sum all year
-        if count > 1 :
+        if count >= 1 :
             sum14 = sum14 + int(row[2])
             sum15 = sum15 + int(row[3])
             sum16 = sum16 + int(row[4])
@@ -151,6 +153,8 @@ with open(path, 'r') as file:
                 lst1214.append(int(row[2]))
                 lst1215.append(int(row[3]))
                 lst1216.append(int(row[4]))
+        #counter
+        count = count + 1
 
 if True :  
     #print("Row count = " + str(count), end='\n\n')
@@ -430,11 +434,26 @@ if mode in ('A', 'a') :
 
 #Graph Plot !!!!!WAITING TO ADD REAL DATA
 print("\n. . . Plotting Line Graph . . .")
-x, y = [1, 2, 3], [1, 2, 3]
-plt.plot(x, y)
+x, y = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], lst14[1:13]
+a, b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], lst14[13:25]
+c, d = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], lst14[25:37]
+e, f = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], lst14[37:49]
+g, h = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], lst14[49:61]
+k, l = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], lst14[61:73]
+m, n = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], lst14[73:85]
+#o, p = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], lst14[85:97]
+pltA.plot(x, y, label = "Africa", marker = 'o', markerfacecolor = 'green', markersize = 5)
+pltA.plot(a, b, label = "Americas", marker = 'o', markerfacecolor = 'green', markersize = 5)
+pltA.plot(c, d, label = "Asean", marker = 'o', markerfacecolor = 'green', markersize = 5)
+pltA.plot(e, f, label = "East Asia", marker = 'o', markerfacecolor = 'green', markersize = 5)
+pltA.plot(g, h, label = "Europe", marker = 'o', markerfacecolor = 'green', markersize = 5)
+pltA.plot(k, l, label = "Middle East", marker = 'o', markerfacecolor = 'green', markersize = 5)
+pltA.plot(m, n, label = "Oceania", marker = 'o', markerfacecolor = 'green', markersize = 5)
+#pltA.plot(o, p, label = "South Asia", marker = 'o', markerfacecolor = 'green', markersize = 5)
 #naming
-plt.xlabel('x - axis')
-plt.ylabel('y - axis')
-plt.title('Tourism in Thailand 2014 - 2016')
+pltA.xlabel('Number of Tourist')
+pltA.ylabel('Month')
+pltA.title('Tourism in Thailand 2014 each month')
 #show the plot
-plt.show()
+pltA.legend()
+pltA.show()
