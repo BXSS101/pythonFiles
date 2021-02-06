@@ -31,6 +31,7 @@ Github URL : https://github.com/BXSS101
 # Program part #
 ################
 import matplotlib.pyplot as pltA     #For Graph plotting
+import matplotlib.pyplot as pltB
 from statistics import mean         #For find mean from int list
 import csv                          #For Reading CSV Files
 import time                         #For Delay setting
@@ -57,6 +58,7 @@ count, sum14, sum15, sum16 = 0, 0, 0, 0
 lst14, lst0114, lst0214, lst0314, lst0414, lst0514, lst0614, lst0714, lst0814, lst0914, lst1014, lst1114, lst1214 = [], [], [], [], [], [], [], [], [], [], [], [], []
 lst15, lst0115, lst0215, lst0315, lst0415, lst0515, lst0615, lst0715, lst0815, lst0915, lst1015, lst1115, lst1215 = [], [], [], [], [], [], [], [], [], [], [], [], []
 lst16, lst0116, lst0216, lst0316, lst0416, lst0516, lst0616, lst0716, lst0816, lst0916, lst1016, lst1116, lst1216 = [], [], [], [], [], [], [], [], [], [], [], [], []
+lst14E, lst15E, lst16E = [int(0) for va in range(0,13)], [int(0) for va in range(0,13)], [int(0) for va in range(0,12)]
 #dict for store region
 regDict14 = {'Africa' : [], 'Americas' : [], 'ASEAN' : [], 'EstAsia' : [], 'Europe' : [], 'MidEast' : [], 'Oceania' : [], 'SoAsia' : []}
 regDict15 = {'Africa' : [], 'Americas' : [], 'ASEAN' : [], 'EstAsia' : [], 'Europe' : [], 'MidEast' : [], 'Oceania' : [], 'SoAsia' : []}
@@ -111,54 +113,90 @@ with open(path, 'r') as file:
                 lst0114.append(int(row[2]))
                 lst0115.append(int(row[3]))
                 lst0116.append(int(row[4]))
+                lst14E[0] = lst14E[0] + int(row[2])
+                lst15E[0] = lst15E[0] + int(row[3])
+                lst16E[0] = lst16E[0] + int(row[4])
             elif row[1] == '2' :
                 lst0214.append(int(row[2]))
                 lst0215.append(int(row[3]))
                 lst0216.append(int(row[4]))
+                lst14E[1] = lst14E[1] + int(row[2])
+                lst15E[1] = lst15E[1] + int(row[3])
+                lst16E[1] = lst16E[1] + int(row[4])
             elif row[1] == '3' :
                 lst0314.append(int(row[2]))
                 lst0315.append(int(row[3]))
                 lst0316.append(int(row[4]))
+                lst14E[2] = lst14E[2] + int(row[2])
+                lst15E[2] = lst15E[2] + int(row[3])
+                lst16E[2] = lst16E[2] + int(row[4])
             elif row[1] == '4' :
                 lst0414.append(int(row[2]))
                 lst0415.append(int(row[3]))
                 lst0416.append(int(row[4]))
+                lst14E[3] = lst14E[3] + int(row[2])
+                lst15E[3] = lst15E[3] + int(row[3])
+                lst16E[3] = lst16E[3] + int(row[4])
             elif row[1] == '5' :
                 lst0514.append(int(row[2]))
                 lst0515.append(int(row[3]))
                 lst0516.append(int(row[4]))
+                lst14E[4] = lst14E[4] + int(row[2])
+                lst15E[4] = lst15E[4] + int(row[3])
+                lst16E[4] = lst16E[4] + int(row[4])
             elif row[1] == '6' :
                 lst0614.append(int(row[2]))
                 lst0615.append(int(row[3]))
                 lst0616.append(int(row[4]))
+                lst14E[5] = lst14E[5] + int(row[2])
+                lst15E[5] = lst15E[5] + int(row[3])
+                lst16E[5] = lst16E[5] + int(row[4])
             elif row[1] == '7' :
                 lst0714.append(int(row[2]))
                 lst0715.append(int(row[3]))
                 lst0716.append(int(row[4]))
+                lst14E[6] = lst14E[6] + int(row[2])
+                lst15E[6] = lst15E[6] + int(row[3])
+                lst16E[6] = lst16E[6] + int(row[4])
             elif row[1] == '8' :
                 lst0814.append(int(row[2]))
                 lst0815.append(int(row[3]))
                 lst0816.append(int(row[4]))
+                lst14E[7] = lst14E[7] + int(row[2])
+                lst15E[7] = lst15E[7] + int(row[3])
+                lst16E[7] = lst16E[7] + int(row[4])
             elif row[1] == '9' :
                 lst0914.append(int(row[2]))
                 lst0915.append(int(row[3]))
                 lst0916.append(int(row[4]))
+                lst14E[8] = lst14E[8] + int(row[2])
+                lst15E[8] = lst15E[8] + int(row[3])
+                lst16E[8] = lst16E[8] + int(row[4])
             elif row[1] == '10' :
                 lst1014.append(int(row[2]))
                 lst1015.append(int(row[3]))
                 lst1016.append(int(row[4]))
+                lst14E[9] = lst14E[9] + int(row[2])
+                lst15E[9] = lst15E[9] + int(row[3])
+                lst16E[9] = lst16E[9] + int(row[4])
             elif row[1] == '11' :
                 lst1114.append(int(row[2]))
                 lst1115.append(int(row[3]))
                 lst1116.append(int(row[4]))
+                lst14E[10] = lst14E[10] + int(row[2])
+                lst15E[10] = lst15E[10] + int(row[3])
+                lst16E[10] = lst16E[10] + int(row[4])
             elif row[1] == '12' :
                 lst1214.append(int(row[2]))
                 lst1215.append(int(row[3]))
                 lst1216.append(int(row[4]))
+                lst14E[11] = lst14E[11] + int(row[2])
+                lst15E[11] = lst15E[11] + int(row[3])
+                lst16E[11] = lst16E[11] + int(row[4])
         #counter
         count = count + 1
 
-if True :  
+if True :  # Draw ::::
     #print("Row count = " + str(count), end='\n\n')
     time.sleep(0.5)
     print(":::::")
@@ -435,7 +473,9 @@ if mode in ('A', 'a') :
     print("\tMonth 12 : " + "{:.2f}".format(round(findSD(lst1216), 2)))
 
 #Graph Plot !!!!!WAITING TO ADD REAL DATA
+pltA.figure(figsize=(8,4))
 print("\n. . . Plotting Line Graph . . .")
+'''
 x, y = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], lst14[1:13]
 a, b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], lst14[13:25]
 c, d = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], lst14[25:37]
@@ -443,7 +483,7 @@ e, f = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], lst14[37:49]
 g, h = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], lst14[49:61]
 k, l = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], lst14[61:73]
 m, n = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], lst14[73:85]
-#o, p = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], lst14[85:97]
+o, p = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], lst14[85:95]
 pltA.plot(x, y, label = "Africa", marker = 'o', markerfacecolor = 'green', markersize = 5)
 pltA.plot(a, b, label = "Americas", marker = 'o', markerfacecolor = 'green', markersize = 5)
 pltA.plot(c, d, label = "Asean", marker = 'o', markerfacecolor = 'green', markersize = 5)
@@ -451,11 +491,29 @@ pltA.plot(e, f, label = "East Asia", marker = 'o', markerfacecolor = 'green', ma
 pltA.plot(g, h, label = "Europe", marker = 'o', markerfacecolor = 'green', markersize = 5)
 pltA.plot(k, l, label = "Middle East", marker = 'o', markerfacecolor = 'green', markersize = 5)
 pltA.plot(m, n, label = "Oceania", marker = 'o', markerfacecolor = 'green', markersize = 5)
-#pltA.plot(o, p, label = "South Asia", marker = 'o', markerfacecolor = 'green', markersize = 5)
+pltA.plot(o, p, label = "South Asia", marker = 'o', markerfacecolor = 'green', markersize = 5)
 #naming
 pltA.xlabel('Number of Tourist')
 pltA.ylabel('Month')
 pltA.title('Tourism in Thailand 2014 each month')
+'''
+#Line graph
+x, y = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], lst14E[0:12]
+a, b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], lst15E[0:12]
+c, d = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], lst16E[0:12]
+pltA.plot(x, y, label = "Yr2014", marker = 'o', markerfacecolor = 'green', markersize = 5)
+pltA.plot(a, b, label = "Yr2015", marker = 'o', markerfacecolor = 'green', markersize = 5)
+pltA.plot(c, d, label = "Yr2016", marker = 'o', markerfacecolor = 'green', markersize = 5)
+pltA.xlabel('Number of Tourist')
+pltA.ylabel('Month')
+pltA.title('Tourism in Thailand 2014 - 2016')
 #show the plot
 pltA.legend()
 pltA.show()
+next = input("press Enter to see next plot")
+#Box plot
+data = [lst14E, lst15E, lst16E]
+fig = pltB.figure()
+ax = fig.add_axes([0,0,1,1])
+bp = ax.boxplot(data)
+pltB.show()
