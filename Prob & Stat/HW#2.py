@@ -22,9 +22,9 @@ Github URL : https://github.com/BXSS101
  Add dictionary for region
 √Add interface
  Add more fancy interface
- Add Graph : Histogram, Box plot, Stem, Leaf
+ื√Add Graph : Histogram, Box plot, Stem, Leaf
 √Add File path selecting Function
- Add Comment to Expalin code
+√Add Comment to Expalin code
 """
 
 ################
@@ -32,6 +32,11 @@ Github URL : https://github.com/BXSS101
 ################
 import matplotlib.pyplot as pltA     #For Graph plotting
 import matplotlib.pyplot as pltB
+import matplotlib.pyplot as plt0
+import matplotlib.pyplot as plt1
+import matplotlib.pyplot as plt2
+import matplotlib.pyplot as plt3
+import matplotlib.pyplot as plt4
 from statistics import mean         #For find mean from int list
 import csv                          #For Reading CSV Files
 import time                         #For Delay setting
@@ -58,7 +63,7 @@ count, sum14, sum15, sum16 = 0, 0, 0, 0
 lst14, lst0114, lst0214, lst0314, lst0414, lst0514, lst0614, lst0714, lst0814, lst0914, lst1014, lst1114, lst1214 = [], [], [], [], [], [], [], [], [], [], [], [], []
 lst15, lst0115, lst0215, lst0315, lst0415, lst0515, lst0615, lst0715, lst0815, lst0915, lst1015, lst1115, lst1215 = [], [], [], [], [], [], [], [], [], [], [], [], []
 lst16, lst0116, lst0216, lst0316, lst0416, lst0516, lst0616, lst0716, lst0816, lst0916, lst1016, lst1116, lst1216 = [], [], [], [], [], [], [], [], [], [], [], [], []
-lst14E, lst15E, lst16E = [int(0) for va in range(0,13)], [int(0) for va in range(0,13)], [int(0) for va in range(0,12)]
+lst14E, lst15E, lst16E = [int(0) for va in range(0,12)], [int(0) for va in range(0,12)], [int(0) for va in range(0,12)]
 #dict for store region
 regDict14 = {'Africa' : [], 'Americas' : [], 'ASEAN' : [], 'EstAsia' : [], 'Europe' : [], 'MidEast' : [], 'Oceania' : [], 'SoAsia' : []}
 regDict15 = {'Africa' : [], 'Americas' : [], 'ASEAN' : [], 'EstAsia' : [], 'Europe' : [], 'MidEast' : [], 'Oceania' : [], 'SoAsia' : []}
@@ -473,8 +478,8 @@ if mode in ('A', 'a') :
     print("\tMonth 12 : " + "{:.2f}".format(round(findSD(lst1216), 2)))
 
 #Graph Plot !!!!!WAITING TO ADD REAL DATA
-pltA.figure(figsize=(8,4))
-print("\n. . . Plotting Line Graph . . .")
+#pltA.figure(figsize=(8,4))
+print("\n. . . Plotting Graphs . . .")
 '''
 x, y = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], lst14[1:13]
 a, b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], lst14[13:25]
@@ -497,6 +502,7 @@ pltA.xlabel('Number of Tourist')
 pltA.ylabel('Month')
 pltA.title('Tourism in Thailand 2014 each month')
 '''
+'''
 #Line graph
 x, y = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], lst14E[0:12]
 a, b = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12], lst15E[0:12]
@@ -510,10 +516,39 @@ pltA.title('Tourism in Thailand 2014 - 2016')
 #show the plot
 pltA.legend()
 pltA.show()
-next = input("press Enter to see next plot")
+'''
+
+#Scatter plot
+months_range = [ i for i in range(1,13)]
+plt0.scatter(months_range, lst15E)
+plt0.title('2015 Tourist visit Thailand Each month')
+plt0.xlabel('Month')
+plt0.ylabel('Volume of tourists (People)')
+plt0.show()
+
+plt1.scatter(months_range, lst16E)
+plt1.title('2016 Tourist visit Thailand Each month')
+plt1.xlabel('Month')
+plt1.ylabel('Volume of tourists (People)')
+plt1.show()
+
 #Box plot
-data = [lst14E, lst15E, lst16E]
+data = [lst15E, lst16E]
 fig = pltB.figure()
-ax = fig.add_axes([0,0,1,1])
-bp = ax.boxplot(data)
+pltB.boxplot(data)
+pltB.title('2015 & 2016 Tourist visit Thailand')
+plt1.xlabel('Year 2015 & 2016')
+plt1.ylabel('Volume of tourists (People)')
 pltB.show()
+
+#Histogram
+plt2.hist(lst15E, density = 1, bins = 20)
+plt2.title('2015 Tourist')
+plt2.show()
+
+plt3.hist(lst16E, density = 1, bins = 20)
+plt3.title('2016 Tourist')
+plt3.show()
+
+#Stem & leaf   !!!Not Recommend with this data
+#print(lst14E)
