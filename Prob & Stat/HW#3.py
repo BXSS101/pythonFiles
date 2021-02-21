@@ -15,7 +15,9 @@ Github URL : https://github.com/BXSS101
 # Program part #
 ################
 from scipy.stats import norm
+import numpy as np
 import matplotlib.pyplot as pltA
+import matplotlib.pyplot as pltB
 import csv
 
 lst14, lst15, lst16 = [], [], []
@@ -94,6 +96,9 @@ with open(path, 'r') as file:
 lst14.sort()
 lst15.sort()
 lst16.sort()
+print(lst15)
+
+#PDF Plot
 pltA.plot(lst15,norm.pdf(lst15))
 pltA.title('2015 Tourist PDF')
 pltA.xlabel('Tourists (Million People)')
@@ -105,3 +110,20 @@ pltA.title('2016 Tourist PDF')
 pltA.xlabel('Tourists (Million People)')
 pltA.ylabel('Volume')
 pltA.show()
+
+#CDF Plot
+values, base = np.histogram(lst15, bins = 96)
+cumulative = np.cumsum(values)
+pltB.plot(base[:-1], cumulative)
+pltA.title('2015 Tourist CDF')
+pltA.xlabel('Tourists (Million People)')
+pltA.ylabel('Volume')
+pltB.show()
+
+values, base = np.histogram(lst16, bins = 96)
+cumulative = np.cumsum(values)
+pltB.plot(base[:-1], cumulative)
+pltA.title('2016 Tourist CDF')
+pltA.xlabel('Tourists (Million People)')
+pltA.ylabel('Volume')
+pltB.show()
