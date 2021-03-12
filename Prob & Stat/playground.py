@@ -1,7 +1,9 @@
-from scipy.stats import norm
 import numpy as np
-import matplotlib.pyplot as plt
 
-x = np.arange(-4,4,0.001)
+#some example data
+x= np.linspace(0.1, 9.9, 20)
+y = 3.0 * x
+#some confidence interval
+ci = 1.96 * np.std(y)/np.mean(y)
 print(x)
-print(norm.pdf(x))
+print(ci)
