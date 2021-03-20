@@ -1,9 +1,9 @@
 import numpy as np
 
 #some example data
-x= np.linspace(0.1, 9.9, 20)
-y = 3.0 * x
+np.random.seed(0)
+x = np.random.randint(1, 10, 30)
+y = x+np.random.normal(0, 1, 30)
 #some confidence interval
-ci = 1.96 * np.std(y)/np.mean(y)
+print(type(x))
 print(x)
-print(ci)

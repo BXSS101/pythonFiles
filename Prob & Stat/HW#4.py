@@ -15,9 +15,11 @@ Github URL : https://github.com/BXSS101
 # Program part #
 ################
 from matplotlib import pyplot as pltA
+import seaborn as sns
+import numpy as np
 import csv
 
-lst14, lst15, lst16 = [], [], []
+lst16 = []
 count = 0
 
 #Start Program
@@ -61,11 +63,19 @@ with open(path, 'r') as file:
     for row in reader:
         #sum all year
         if count >= 1 :
-            lst14.append(int(row[2]))
-            lst15.append(int(row[3]))
             lst16.append(int(row[4]))
         count = count + 1
 
-print(lst14)
-print(lst15)
-print(lst16)
+lst16.sort()
+#print(lst16)
+#print(len(lst16))
+#data
+#x = np.array(lst16)
+x = list(range(1, 97))
+y = np.array(lst16)
+
+fig, ax = pltA.subplots()
+ax = sns.lineplot(x, y, ci = 99)
+pltA.title('2016 Tourists CI')
+pltA.ylabel('Amount of Tourist (Million People)')
+pltA.show()
