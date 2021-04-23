@@ -98,7 +98,7 @@ print("============================================================")
 # 1 # C:/Users/akara/Documents/GitHub/pythonFiles/Prob & Stat/thaitourism2.csv
 # 2 # C:/Users/HP/Documents/GitHub/pythonFiles/Prob & Stat/thaitourism2.csv
 if inPath == '' :
-    path = 'C:/Users/akara/Documents/GitHub/pythonFiles/Prob & Stat/thaitourism2.csv'
+    path = 'c:/Users/akara/OneDrive - KMITL/Documents/GitHub/pythonFiles/Prob & Stat/thaitourism2.csv'
 else :
     path = inPath
 with open(path, 'r') as file:
